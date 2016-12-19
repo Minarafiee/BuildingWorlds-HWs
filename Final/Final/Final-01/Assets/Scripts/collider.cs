@@ -10,21 +10,27 @@ public class collider : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void OnTriggerExit (Collider other) {
-		other.transform.parent.GetComponent<Animator>().SetBool("StraightWalk", true);
+	void OnTriggerExit (Collider walkingPerson) {
+		walkingPerson.GetComponent<Animator>().SetBool("StraightWalk", true);
+		Debug.Log ("OMG its working!");
 	}
 
 
 
 
 
-	void OnControllerColliderHit(ControllerColliderHit hit)
-	{
-		if(hit.collider.tag == "Edge")
-		{
-			GetComponent<MeshRenderer>().enabled = false;
-		}
-	}
 
+//	void OnControllerColliderHit(ControllerColliderHit hit)
+//	{
+//		if(hit.collider.tag == "Edge")
+//		{
+//			GetComponent<MeshRenderer>().enabled = false;
+//
+//		}
+//	}
+
+
+	void Update () {
+	}
 
 }
